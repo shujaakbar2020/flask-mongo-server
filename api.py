@@ -22,7 +22,7 @@ def mongo_read():
 @app.route('/data', methods=['POST'])
 def mongo_write():
     data = request.json
-    if data is None or data=={} or 'Document' not in data:
+    if data is None or data=={}:
         return Response(response=json.dumps({'status': 'Error please provide coonection info'}), status=400, mimetype='application/')
 
     return Response(response=json.dumps(data), status=201, mimetype='application/json')
