@@ -11,7 +11,7 @@ def base():
 
 
 @app.route('/data', methods=['GET'])
-def mongo_read():
+def data_read():
     data = request.json
     if data is None or data=={}:
         return Response(response=json.dumps({'status': 'Error please provide connection info'}), status=400, mimetype='application/json')
@@ -20,7 +20,7 @@ def mongo_read():
 
 
 @app.route('/data', methods=['POST'])
-def mongo_write():
+def data_write():
     data = request.json
     if data is None or data=={}:
         return Response(response=json.dumps({'status': 'Error please provide coonection info'}), status=400, mimetype='application/')
